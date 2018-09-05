@@ -1,0 +1,54 @@
+/*
+ * Theme Name: KitPress
+ */
+
+@import '_settings';
+// TODO import only needed components
+@import '../node_modules/foundation-sites/scss/foundation';
+
+@include foundation-everything;
+
+div.top-bar-wrapper {
+	background: $darker-gray;
+	
+	.menu li a {
+		color: $white;
+	
+		&:hover {
+			color: $light-gray;
+		}
+	}
+	
+	.top-bar-mobile {
+		@include top-bar-stacked();
+		
+		display: none;
+		
+		.menu li {
+			width: 100%;
+		}
+	}
+	
+	@include breakpoint(medium down) {
+		
+		.top-bar {
+			@include top-bar-unstack();
+			
+			.title-bar {
+				margin-right: 1.125rem;
+			}
+
+			.top-bar-right {
+				flex-grow: 1;
+			
+				.menu li {
+					width: 100%;
+
+					input {
+						max-width: none;
+					}
+				}
+			}
+		}
+	}
+}
