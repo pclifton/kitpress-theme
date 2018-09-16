@@ -1,6 +1,25 @@
 {
-	"dependencies": {
-		"sass": "1",
-		"foundation-sites": "6"
+	"name": "kitpress-theme",
+	"version": "1.0.0",
+	"description": "Wordpress theme for KitPress",
+	"main": "webpack.config.js",
+	"scripts": {
+		"build": "webpack --mode production",
+		"watch": "webpack --watch --mode production"
+	},
+	"keywords": [],
+	"author": "Philip Clifton",
+	"license": "ISC",
+	"devDependencies": {
+		"css-loader": "^1.0.0",
+		"extract-loader": "^3.0.0",
+		"file-loader": "^2.0.0",
+		"foundation-sites": "^6.4.2",
+		"jquery": "^3.3.1",
+		"node-sass": "^4.9.3",
+		"sass-loader": "^7.1.0",
+		"webpack": "^4.18.1",
+		"webpack-cli": "^3.1.0",
+		"webpack-merge": "^4.1.4"
 	}
 }

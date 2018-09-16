@@ -8,19 +8,6 @@
 
 	<?php wp_head(); ?>
 	
-	<!-- TODO figure out a better way to include JS -->
-	<script
-	  src="https://code.jquery.com/jquery-3.3.1.min.js"
-	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	  crossorigin="anonymous"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/foundation.min.js"></script>
-	<script>
-		
-		$(function(){
-			$(document).foundation();
-		});
-		
-	</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -29,7 +16,7 @@
 		<div class="grid-container">
 			
 			<div class="top-bar">
-				<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+				<div class="title-bar" id="main-menu-toggle" data-responsive-toggle="main-menu" data-hide-for="medium">
 					<button class="menu-icon" type="button" data-toggle></button>
 				</div>
 				<div class="top-bar-left hide-for-small-only">

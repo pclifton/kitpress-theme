@@ -14,6 +14,7 @@ add_action( 'after_setup_theme', 'kitpress_setup' );
 function kitpress_scripts () {
 	// Theme stylesheet
 	wp_enqueue_style('kitpress-style', get_stylesheet_uri());
+	wp_enqueue_script('kitpress-js', get_theme_file_uri('app.js'), array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'kitpress_scripts');
 
