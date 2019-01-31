@@ -10,6 +10,7 @@
 
 div.top-bar-wrapper {
 	background: $darker-gray;
+	margin-bottom: 1rem;
 	
 	.menu li a {
 		color: $white;
@@ -51,4 +52,22 @@ div.top-bar-wrapper {
 			}
 		}
 	}
+}
+
+div.post-container {
+	@include callout($dark-gray);
+	.post-title a {
+		color: $body-font-color;
+		
+		&:hover {
+			color: $anchor-color-hover;
+//			color: lighten($body-font-color, 20%);
+//			border-bottom: 1px solid;
+//			text-decoration: underline;
+		}
+	}
+}
+
+div.post-meta p {
+	border-bottom: $callout-border;
 }
