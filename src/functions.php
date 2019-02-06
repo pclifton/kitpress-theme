@@ -19,6 +19,21 @@ function kitpress_scripts () {
 add_action('wp_enqueue_scripts', 'kitpress_scripts');
 
 /**
+ * Do widget-ey stuff
+ */
+function kitpress_widgets_init() {
+	register_sidebar(array(
+		'name'          => 'Sidebar',
+		'id'            => 'sidebar',
+		'before_widget' => '<div class="sidebar-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4>',
+	));
+}
+add_action( 'widgets_init', 'kitpress_widgets_init' );
+
+/**
  * Clean up generated default page menu. We only want <li>s, nothing more, but
  * wp_page_menu doesn't support any custom wrapping stuff. So instead we just
  * let it do its thing and then regex out the expected surrounding markup.

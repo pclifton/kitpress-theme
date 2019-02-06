@@ -16,19 +16,10 @@
 			</div>
 		<?php endwhile; ?>
 	<?php endif; ?>
-	
-	
-	<!-- <div class="primary callout">more content</div>
-
-	<div class="primary callout">yet more content</div> -->
 </div>
 
 <div class="large-4 medium-4 cell">
-	<div class="primary callout">content</div>
-	
-	<div class="primary callout">more content</div>
-	
-	<div class="primary callout">yet more content</div>
+	<?php dynamic_sidebar('sidebar'); ?>
 </div>
 
 <?php get_footer();

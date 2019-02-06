@@ -61,13 +61,14 @@ div.post-container {
 		
 		&:hover {
 			color: $anchor-color-hover;
-//			color: lighten($body-font-color, 20%);
-//			border-bottom: 1px solid;
-//			text-decoration: underline;
 		}
+	}
+	
+	div.post-meta p {
+		border-bottom: $callout-border;
 	}
 }
 
-div.post-meta p {
-	border-bottom: $callout-border;
+div.sidebar-widget {
+	@include callout(map-get($foundation-palette, primary));
 }
