@@ -69,6 +69,21 @@ div.post-container {
 	}
 }
 
+ul.page-numbers {
+	@include pagination-container;
+	
+	text-align: center;
+	
+	li {
+		span.current {
+			@include pagination-item-current;
+		}
+		span.dots {
+			@include pagination-ellipsis;
+		}
+	}
+}
+
 div.sidebar-widget {
 	@include callout(map-get($foundation-palette, primary));
 }

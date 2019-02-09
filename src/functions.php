@@ -42,3 +42,20 @@ function kitpress_page_menu_cleanup ($html) {
 	return preg_replace('/\<div\>\<ul\>(.*?)\<\/ul\>\<\/div\>/ms','$1', $html);
 }
 add_filter('wp_page_menu', 'kitpress_page_menu_cleanup');
+
+/**
+ * Generate pagination markup. Just a fancy wrapper for paginate_links.
+ */
+function kitpress_pagination () {
+	global $wp_query;
+
+	$big = 999999999; // need an unlikely integer
+
+	return paginate_links(array(
+		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		'format' => '?paged=%#%',
+		'current' => max( 1, get_query_var('paged') ),
+		'total' => $wp_query->max_num_pages,
+		'type' => 'list'
+	));
+}

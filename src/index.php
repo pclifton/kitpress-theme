@@ -15,6 +15,8 @@
 				</div>
 			</div>
 		<?php endwhile; ?>
+		
+		<?=kitpress_pagination() ?>
 	<?php endif; ?>
 </div>
 
