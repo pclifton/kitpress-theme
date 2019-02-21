@@ -59,3 +59,15 @@ function kitpress_pagination () {
 		'type' => 'list'
 	));
 }
+
+/**
+ * Wrap image tags in a link for the featherlight modal
+ */
+function kitpress_filter_images($content){
+return preg_replace(
+		'/<img (.*?) src="(.*)\.(.*?)" (.*?) \/>/i',
+		'<a href="$2.$3" data-featherlight><img src="$2.$3" $1 $4" /></a>',
+		$content
+	);
+}
+add_filter('the_content', 'kitpress_filter_images');
